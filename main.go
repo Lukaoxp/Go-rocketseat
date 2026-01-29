@@ -3,13 +3,16 @@ package main
 import "fmt"
 
 func main() {
-	var pessoas = map[string]int{}
-	pessoas["lais"] = 26
-	pessoas["lucas"] = 31
+	var nota int
 
-	if idade, ok := pessoas["lucas"]; ok {
-		fmt.Println("Pessoa existe", idade, ok)
+	fmt.Print("Digite a nota: ")
+	fmt.Scanln(&nota)
+
+	if nota >= 90 {
+		fmt.Println("Aprovado com distinção")
+	} else if nota >= 70 {
+		fmt.Println("Aprovado")
 	} else {
-		fmt.Println("Pessoa nao existe")
+		fmt.Println("Reprovado")
 	}
 }
