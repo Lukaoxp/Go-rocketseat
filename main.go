@@ -1,13 +1,15 @@
 package main
 
-import (
-	"fmt"
-
-	"github.com/lukaoxp/curso-go/meet"
-)
+import "fmt"
 
 func main() {
-	fmt.Println("Hello bitch")
-	meet.SayHello()
-	// meet.Say("Bitch")
+	var pessoas = map[string]int{}
+	pessoas["lais"] = 26
+	pessoas["lucas"] = 31
+
+	if idade, ok := pessoas["lucas"]; ok {
+		fmt.Println("Pessoa existe", idade, ok)
+	} else {
+		fmt.Println("Pessoa nao existe")
+	}
 }
