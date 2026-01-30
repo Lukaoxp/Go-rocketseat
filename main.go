@@ -1,17 +1,23 @@
 package main
 
-func main() {
-	println(soma(1, 2))
+import "fmt"
 
-	multiplica := func(x int) int {
-		return x * 2
-	}
-
-	resultado := multiplica(5)
-	println(resultado)
+type Pessoa struct {
+	Nome  string
+	Idade int
 }
 
-func soma(a, b int) (retorno int) {
-	retorno = a + b
-	return
+func (p *Pessoa) Apresentar() {
+	fmt.Printf("Olá, sou %s e tenho %d anos.\n", p.Nome, p.Idade)
+	p.Nome = "mario"
+}
+
+func main() {
+	pessoa := Pessoa{
+		Nome:  "Lucas",
+		Idade: 31,
+	}
+
+	pessoa.Apresentar()
+	pessoa.Apresentar()
 }
